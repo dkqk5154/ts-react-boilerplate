@@ -24,7 +24,12 @@ function App() {
         defaultOptions: {
             queries: {
                 // 공통 config 설정
-                refetchInterval: 3000,
+                refetchOnWindowFocus: false,
+                refetchOnReconnect: false,
+                refetchIntervalInBackground: false,
+                refetchInterval: false,
+                retryDelay: 3000,
+                retry: 3,
                 // 공통 fetch 함수 설정
                 queryFn: ({ queryKey }: QueryFunctionContext) => fetcher(queryKey.join("")),
             },
