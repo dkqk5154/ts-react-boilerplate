@@ -14,11 +14,11 @@ const Styled = {
 
 const MainPage = (): JSX.Element => {
 
-    const { data: apiFileList = [] } = useQuery('/file');
+    const { data: testAPI } = useQuery('https://httpbin.org/get');
 
     useEffect(() => {
-        console.log('apiFileList : ', apiFileList)
-    }, [apiFileList])
+        console.log('testAPI : ', testAPI)
+    }, [testAPI])
 
     return <Styled.Wrapper>Main</Styled.Wrapper>;
 };
